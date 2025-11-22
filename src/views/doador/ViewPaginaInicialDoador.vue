@@ -1,8 +1,68 @@
-<script setup lang="ts">
-import { PhCalendarDots } from '@phosphor-icons/vue';
+<script setup>
+import { PhCalendarDots, PhEye } from '@phosphor-icons/vue';
 import CustomButton from '../../components/CustomButton.vue';
 import CustomInput from '../../components/CustomInput.vue';
+import Table from '../../components/Table.vue';
+import { h } from 'vue';
+import Badge from '../../components/Badge.vue';
+import { useRouter } from 'vue-router';
+import { RouteNames } from '../../router/route-names';
 
+const router = useRouter();
+
+const pageSize = 6;
+
+const columns = [
+    {
+        header: "Local",
+        accessorKey: "local",
+    },
+    {
+        header: "Marcado Para",
+        accessorKey: "data",
+    },
+    {
+        header: "Status",
+        accessorKey: "status",
+        cell: ({ row }) => {
+            const status = row.original.status;
+
+            const variantMap = {
+                Agendado: "warning",
+                Concluido: "success",
+                Cancelado: "danger",
+            };
+
+            return h(Badge, { variant: variantMap[status] }, () => status);
+        }
+    },
+    {
+        header: "Ações",
+        cell: ({ row }) => {
+            const status = row.original.status;
+            return h(CustomButton, { icon: PhEye, label: "Visualizar", secondary: true });
+        }
+    }
+];
+
+
+const data = [
+    {
+        local: "Hemocentro A",
+        data: "22/11/2025 10:00",
+        status: "Agendado",
+    },
+    {
+        local: "Hemocentro B",
+        data: "10/10/2025 14:00",
+        status: "Concluido",
+    },
+    {
+        local: "Hemocentro C",
+        data: "05/08/2025 08:00",
+        status: "Cancelado",
+    },
+];
 </script>
 
 <template>
@@ -12,7 +72,7 @@ import CustomInput from '../../components/CustomInput.vue';
                 <h1 class="poppins-bold">Olá, doador!</h1>
             </section>
             <section class="btn-hemocentro">
-                <CustomButton label="Buscar Hemocentro"/>
+                <CustomButton label="Buscar Hemocentro" @click="router.push({name: RouteNames.BUSCAR_HEMOCENTROS_DOADOR})"/>
             </section>
         </header>
         <main>
@@ -30,6 +90,7 @@ import CustomInput from '../../components/CustomInput.vue';
                     <h2>Últimas Doações</h2>
                 </div>
                 <CustomInput label="Hemocentro" id="hemocentro" model-value="" placeholder="Pesquisar"/>
+                <Table :data="data" :columns="columns" :pageSize="pageSize" />
             </div>
         </main>
     </div>
@@ -41,6 +102,9 @@ import CustomInput from '../../components/CustomInput.vue';
     display: flex;
     flex-direction: column;
     gap: 50px;
+
+    overflow-y: auto;
+    height: 100%;
 }
 
 .home-header {
