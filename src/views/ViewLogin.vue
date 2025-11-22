@@ -12,7 +12,7 @@ const email = ref<string>();
 const senha = ref<string>();
 
 const login = () => {
-    router.push({name: RouteNames.HOME_DOADOR})
+    router.push({name: RouteNames.HOME_HEMOCENTRO})
 }
 
 const cadastrar = () => {
