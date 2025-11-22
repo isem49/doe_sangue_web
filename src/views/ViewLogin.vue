@@ -22,7 +22,7 @@ const cadastrar = () => {
 
 <template>
     <div class="view-login">
-        <section class="logo">
+        <section class="logo" @click="router.push({name: RouteNames.LANDING_PAGE})">
             <img src="../assets/logo-light.svg" alt="logo-doe-sangue" />
         </section>
         <section class="form">
@@ -74,6 +74,8 @@ const cadastrar = () => {
 
     border-radius: 40px 0 0 40px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+
+    cursor: pointer;
 }
 
 .form {
