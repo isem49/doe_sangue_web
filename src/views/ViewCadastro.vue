@@ -4,6 +4,7 @@ import CustomButton from '../components/CustomButton.vue';
 import CustomInput from '../components/CustomInput.vue';
 import LinkButton from '../components/LinkButton.vue';
 import { useRouter } from 'vue-router';
+import { RouteNames } from '../router/route-names';
 
 const router = useRouter();
 
@@ -13,7 +14,7 @@ const senha = ref<string>();
 const confirmarSenha = ref<string>();
 
 const login = () => {
-    router.push({name: 'home-doador'});
+    router.push({name: RouteNames.HOME_DOADOR});
 }
 </script>
 
@@ -34,7 +35,7 @@ const login = () => {
                 <CustomInput label="Confirme a Senha" id="confirmar-senha" :model-value="confirmarSenha" placeholder="******" type="password"/>
                 <div class="form-button">
                     <CustomButton label="Entrar" @click="login()"/>
-                    <LinkButton label="Já tenho conta" route-name="login"/>
+                    <LinkButton label="Já tenho conta" :route-name="RouteNames.LOGIN"/>
                 </div>
             </div>
         </section>

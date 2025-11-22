@@ -3,8 +3,10 @@ import { PhHeart } from '@phosphor-icons/vue';
 import CardDepoimento from '../../components/CardDepoimento.vue';
 import CustomButton from '../../components/CustomButton.vue';
 import NavbarLanding from '../../components/NavbarLanding.vue';
+import { useRouter } from 'vue-router';
+import { RouteNames } from '../../router/route-names';
 
-
+const router = useRouter();
 </script>
 
 <template>
@@ -15,8 +17,8 @@ import NavbarLanding from '../../components/NavbarLanding.vue';
                 <h1 class="poppins-regular">Olá! Somos o <span>Doe Sangue</span></h1>
                 <p>Conectamos doadores voluntários com hemocentros credenciados através de uma plataforma segura, moderna e eficiente, contribuindo para salvar vidas em todo o Brasil.</p>
                 <div class="welcome-buttons">
-                    <CustomButton label="Sou Hemocentro" secondary/>
-                    <CustomButton label="Quero Doar Sangue"/>
+                    <CustomButton @click="router.push({name: RouteNames.CADASTRAR})" label="Sou Hemocentro" secondary/>
+                    <CustomButton @click="router.push({name: RouteNames.CADASTRAR})" label="Quero Doar Sangue"/>
                 </div>
             </section>
     

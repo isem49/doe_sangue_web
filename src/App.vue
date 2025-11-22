@@ -4,7 +4,7 @@ import { RouteNames } from './router/route-names';
 import LayoutLogado from './layouts/LayoutLogado.vue';
 
 const route = useRoute();
-const simpleViews = [RouteNames.LANDING_PAGE, RouteNames.LOGIN] as string[];
+const simpleViews = [RouteNames.LANDING_PAGE, RouteNames.LOGIN, RouteNames.CADASTRAR] as string[];
 </script>
 
 <template>

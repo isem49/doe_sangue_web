@@ -2,6 +2,7 @@ import type { RouteRecordRaw } from "vue-router";
 import { RouteNames } from "./route-names";
 import ViewLandingPage from "../views/landing/ViewLandingPage.vue";
 import ViewLogin from "../views/ViewLogin.vue";
+import ViewCadastro from "../views/ViewCadastro.vue";
 
 export const routesDeslogadas : RouteRecordRaw[] = [
     {
@@ -13,5 +14,10 @@ export const routesDeslogadas : RouteRecordRaw[] = [
       path: '/login',
       name: RouteNames.LOGIN,
       component: ViewLogin
-    },    
+    },
+    {
+      path: '/cadastrar',
+      name: RouteNames.CADASTRAR,
+      component: ViewCadastro
+    },
 ];

@@ -4,6 +4,7 @@ import CustomButton from '../components/CustomButton.vue';
 import CustomInput from '../components/CustomInput.vue';
 import LinkButton from '../components/LinkButton.vue';
 import { useRouter } from 'vue-router';
+import { RouteNames } from '../router/route-names';
 
 const router = useRouter();
 
@@ -11,7 +12,11 @@ const email = ref<string>();
 const senha = ref<string>();
 
 const login = () => {
-    router.push({name: 'home-doador'})
+    router.push({name: RouteNames.HOME_DOADOR})
+}
+
+const cadastrar = () => {
+    router.push({name: RouteNames.CADASTRAR})
 }
 </script>
 
@@ -37,7 +42,7 @@ const login = () => {
             <div class="dont-have-account">
                 <p>Ainda não tem uma conta?</p>
                 <div class="form-button">
-                    <CustomButton label="Cadastre-se" secondary red-font-color/>
+                    <CustomButton @click="cadastrar" label="Cadastre-se" secondary red-font-color/>
                 </div>
             </div>
         </section>
