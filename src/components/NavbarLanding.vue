@@ -6,7 +6,7 @@ import { RouteNames } from '../router/route-names';
 var router = useRouter();
 
 const navegarPara = (nomeRota: string) => {
-    router.push({name: nomeRota});
+    router.push({ name: nomeRota });
 }
 
 </script>
@@ -14,14 +14,14 @@ const navegarPara = (nomeRota: string) => {
 <template>
     <nav class="poppins-regular">
         <section class="logo" @click="navegarPara(RouteNames.LANDING_PAGE)">
-            <img src="../assets/logo_vertical.svg" alt="logo-doe-sangue"/>
+            <img src="../assets/logo_vertical.svg" alt="logo-doe-sangue" />
         </section>
         <section class="options">
             <div class="navbar-option" @click="navegarPara('sobre-nos')">Sobre Nós</div>
-            <div class="navbar-option" @click="navegarPara('pontos-de-coleta')">Pontos de Coleta</div>
+            <div class="navbar-option" @click="navegarPara(RouteNames.PONTOS_COLETA)">Pontos de Coleta</div>
             <div class="navbar-option" @click="navegarPara(RouteNames.REQUISITOS_DOACAO)">Requisitos</div>
             <div class="navbar-option" @click="navegarPara('requisitos')">Quiz de Aptidão</div>
-            <CustomButton class="navbar-option btn-entrar" label="Entrar" @click="navegarPara('login')"/>
+            <CustomButton class="navbar-option btn-entrar" label="Entrar" @click="navegarPara('login')" />
         </section>
     </nav>
 </template>
@@ -72,4 +72,3 @@ nav {
     font-size: 18px;
 }
 </style>
-

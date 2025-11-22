@@ -4,19 +4,26 @@ import { RouteNames } from './router/route-names';
 import LayoutLogado from './layouts/LayoutLogado.vue';
 
 const route = useRoute();
-const simpleViews = [RouteNames.LANDING_PAGE, RouteNames.LOGIN, RouteNames.CADASTRAR, RouteNames.REQUISITOS_DOACAO, RouteNames.RECUPERAR_SENHA, RouteNames.SOBRE_NOS] as string[];
+const simpleViews = [
+    RouteNames.LANDING_PAGE,
+    RouteNames.LOGIN,
+    RouteNames.CADASTRAR,
+    RouteNames.REQUISITOS_DOACAO,
+    RouteNames.RECUPERAR_SENHA,
+    RouteNames.SOBRE_NOS,
+    RouteNames.PONTOS_COLETA
+] as string[];
 </script>
 
 <template>
     <div v-if="simpleViews.includes(route.name as string)">
-        <RouterView/>
+        <RouterView />
     </div>
     <div v-else>
         <LayoutLogado :sidebar-doador="route.path.includes('doador')">
-            <RouterView/>
+            <RouterView />
         </LayoutLogado>
     </div>
 </template>
 
-<style scoped>
-</style>
+<style scoped></style>

@@ -6,6 +6,7 @@ import ViewCadastro from "../views/ViewCadastro.vue";
 import ViewRequisitosDoacao from "../views/landing/ViewRequisitosDoacao.vue";
 import ViewRecuperacaoSenha from "../views/recuperacaoSenha/ViewRecuperacaoSenha.vue";
 import ViewSobreNos from "../views/landing/ViewSobreNos.vue";
+import ViewPontosDeColeta from "../views/landing/ViewPontosDeColeta.vue";
 
 export const routesDeslogadas : RouteRecordRaw[] = [
     {
@@ -38,4 +39,9 @@ export const routesDeslogadas : RouteRecordRaw[] = [
       name: RouteNames.SOBRE_NOS,
       component: ViewSobreNos
     },
+    {
+      path: '/pontos-coleta',
+      name: RouteNames.PONTOS_COLETA,
+      component: ViewPontosDeColeta
+    }
 ];

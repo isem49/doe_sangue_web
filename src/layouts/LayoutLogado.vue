@@ -12,7 +12,7 @@ defineProps<{
     <div class="layout-container">
         <div class="sidebar">
             <Sidebar>
-                <component :is="sidebarDoador ? SidebarOptionsDoador : SidebarOptionsHemocentro"/>
+                <component :is="sidebarDoador ? SidebarOptionsDoador : SidebarOptionsHemocentro" />
             </Sidebar>
         </div>
         <div class="view-container">
@@ -51,4 +51,3 @@ defineProps<{
     padding: 60px;
 }
 </style>
-
