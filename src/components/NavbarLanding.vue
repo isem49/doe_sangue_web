@@ -27,8 +27,8 @@ const navegarPara = (nomeRota: string) => {
 
 <style scoped>
 nav {
+    background-color: #FFFFFF;
     position: fixed;
-    background-color: var(--background-color);
     width: 100%;
     height: 100px;
 
@@ -38,6 +38,7 @@ nav {
     border-color: var(--input-border-color);
 
     padding: 0 30px;
+    top: 0;
 }
 
 .logo {
@@ -62,6 +63,10 @@ nav {
 
 .navbar-option:hover {
     cursor: pointer;
+}
+
+.btn-entrar {
+    font-size: 18px;
 }
 </style>
 
