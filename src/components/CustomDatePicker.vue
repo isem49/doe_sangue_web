@@ -196,7 +196,7 @@ const daysOfWeek = ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb'];
 .date-picker-wrapper {
     position: relative; 
     width: 250px; 
-    margin: 20px;
+    margin: 16px 0;
 }
 
 .date-input-container {
@@ -206,6 +206,7 @@ const daysOfWeek = ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb'];
     background-color: white;
     height: var(--input-height);
     padding-right: 10px;
+    margin: 16px 0;
 }
 
 .date-input {
