@@ -4,6 +4,7 @@ import Table from '../../components/Table.vue';
 import { PhEye } from '@phosphor-icons/vue';
 import CustomButton from '../../components/CustomButton.vue';
 import Badge from '../../components/Badge.vue';
+import { RouteNames } from '../../router/route-names';
 
 const pageSize = 6;
 
@@ -93,9 +94,9 @@ const data = [
         <h1>Bolsas de Sangue</h1>
     </header>
     <main>
-        <Table :data="data" :columns="columns" :pageSize="pageSize" />
+        <Table :data="data" :columns="columns" :pageSize="pageSize"
+            :addRoute="RouteNames.CRIAR_BOLSA_SANGUE_HEMOCENTRO" />
     </main>
 </template>
 
-<style scoped>
-</style>
+<style scoped></style>

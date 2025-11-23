@@ -14,7 +14,7 @@ const email = ref<string>();
 const senha = ref<string>();
 
 const login = () => {
-    router.push({name: RouteNames.HOME_HEMOCENTRO})
+    router.push({ name: RouteNames.HOME_DOADOR })
 }
 
 const cadastrar = () => {

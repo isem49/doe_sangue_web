@@ -1,16 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue'
-import { PhCaretLeft, PhCaretRight, PhFinnTheHuman, PhFunnel, PhPlus } from '@phosphor-icons/vue'
-
-const props = defineProps({
-    data: Array,
-    columns: Array,
-    pageSize: {
-        type: Number,
-        default: 10,
-    }
-})
-
+import { PhCaretLeft, PhCaretRight, PhFunnel, PhPlus } from '@phosphor-icons/vue'
 import {
     useVueTable,
     FlexRender,
@@ -21,8 +11,21 @@ import {
 } from '@tanstack/vue-table'
 import IconButton from './IconButton.vue'
 import CustomInput from './CustomInput.vue'
+import { useRouter } from 'vue-router'
 
-const showingInput = ref(false)
+const props = defineProps({
+    data: Array,
+    columns: Array,
+    pageSize: {
+        type: Number,
+        default: 10,
+    },
+    addRoute: String
+})
+
+const router = useRouter();
+
+const showingInput = ref(false);
 
 function toggleInput() {
     showingInput.value = !showingInput.value
@@ -83,7 +86,7 @@ const table = useVueTable({
             <div class="table-scroll">
                 <div class="table-inner">
                     <div class="header-actions">
-                        <IconButton :icon="PhPlus" />
+                        <IconButton :icon="PhPlus" @click="router.push(addRoute ?? '')" />
                         <IconButton :icon="PhFunnel" @click="toggleInput" secondary />
                         <transition name="fade">
                             <CustomInput v-if="showingInput" placeholder="Pesquisar" v-model="filter" />

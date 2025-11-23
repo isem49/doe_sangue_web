@@ -1,10 +1,14 @@
 <script setup lang="ts">
 import { h } from 'vue';
-import Table from '../../components/Table.vue';
 import { PhEye } from '@phosphor-icons/vue';
-import Badge from '../../components/Badge.vue';
 import CustomButton from '../../components/CustomButton.vue';
+import Badge from '../../components/Badge.vue';
+import Table from '../../components/Table.vue';
+import { useRouter } from 'vue-router';
+import { RouteNames } from '../../router/route-names';
 
+
+const router = useRouter();
 
 const pageSize = 6;
 
@@ -46,47 +50,52 @@ const columns = [
     },
     {
         header: "Ações",
-        cell: () => h(CustomButton, { icon: PhEye, label: "Visualizar Doador", secondary: true }),
+        cell: () => h(CustomButton, { icon: PhEye, label: "Visualizar Doador", secondary: true, 'onClick': () => router.push(`/hemocentro/doadores/1`) }),
     },
 ];
 
 
 const data = [
     {
-        doador: "Luana Yasmim",
-        data_nascimento: "20/08/2003",
+        id: 1,
+        doador: "Maria Souza",
+        data_nascimento: "01/01/1990",
         sexo: 'F',
         tipo_sanguineo: "-O",
         qtd_doacoes: 10,
         status: "Apto",
     },
     {
-        doador: "Luana Yasmim",
-        data_nascimento: "20/08/2003",
+        id: 1,
+        doador: "João Silva",
+        data_nascimento: "01/01/1990",
         sexo: 'F',
         tipo_sanguineo: "-O",
         qtd_doacoes: 10,
         status: "Inapto",
     },
     {
-        doador: "Luana Yasmim",
-        data_nascimento: "20/08/2003",
+        id: 1,
+        doador: "José Miguel",
+        data_nascimento: "01/01/1990",
         sexo: 'F',
         tipo_sanguineo: "-O",
         qtd_doacoes: 10,
         status: "Aguardando",
     },
     {
-        doador: "Luana Yasmim",
-        data_nascimento: "20/08/2003",
+        id: 1,
+        doador: "Severina Josefa",
+        data_nascimento: "01/01/1990",
         sexo: 'F',
         tipo_sanguineo: "-O",
         qtd_doacoes: 10,
         status: "Apto",
     },
     {
-        doador: "Luana Yasmim",
-        data_nascimento: "20/08/2003",
+        id: 1,
+        doador: "Fátima Cristiane",
+        data_nascimento: "01/01/1990",
         sexo: 'F',
         tipo_sanguineo: "-O",
         qtd_doacoes: 10,
@@ -100,7 +109,7 @@ const data = [
         <h1>Doadores</h1>
     </header>
     <main>
-        <Table :data="data" :columns="columns" :pageSize="pageSize" />
+        <Table :data="data" :columns="columns" :pageSize="pageSize" :addRoute="RouteNames.DOADORES_HEMOCENTRO_NOVO" />
     </main>
 </template>
 
