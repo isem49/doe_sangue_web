@@ -10,7 +10,7 @@ defineProps<{
 
 <template>
     <button :class="{ 'btn-secondary': secondary }" class="poppins-medium">
-        <component :is="icon" size="25" :color="secondary ? 'var(--primary-color)' : 'var(--font-button-primary)'"/>
+        <component :is="icon" size="25" :color="secondary ? 'var(--primary-color)' : 'var(--font-button-primary)'" />
     </button>
 </template>
 
@@ -49,4 +49,3 @@ button:hover {
     color: var(--font-button-primary);
 }
 </style>
-

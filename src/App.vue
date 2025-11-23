@@ -20,7 +20,7 @@ const simpleViews = [
         <RouterView />
     </div>
     <div v-else>
-        <LayoutLogado :sidebar-doador="route.path.includes('doador')">
+        <LayoutLogado :sidebar-doador="route.path.includes('doador/')">
             <RouterView />
         </LayoutLogado>
     </div>
