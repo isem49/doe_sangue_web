@@ -65,8 +65,7 @@ const selectOption = (option: string) => {
 
 .dropdown-label {
     display: block;
-    margin-bottom: 10px;
-    font-size: 14px;
+    margin-bottom: 8px;
 }
 
 .dropdown-header {
