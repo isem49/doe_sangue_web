@@ -17,5 +17,7 @@ export const RouteNames = {
 
     HOME_HEMOCENTRO:"home-hemocentro",
     DOADORES_HEMOCENTRO:"doadores",
-    BOLSAS_SANGUE_HEMOCENTRO:"bolsas-de-sangue"
+    BOLSAS_SANGUE_HEMOCENTRO:"bolsas-de-sangue",
+    CRIAR_BOLSA_SANGUE_HEMOCENTRO: "criar-bolsa-de-sangue",
+    EDITAR_BOLSA_SANGUE_HEMOCENTRO: "editar-bolsa-de-sangue"
 } as const

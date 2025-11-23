@@ -3,6 +3,7 @@ import { RouteNames } from "./route-names";
 import ViewHomeHemocentro from "../views/hemocentro/ViewHomeHemocentro.vue";
 import ViewBolsasSangue from "../views/hemocentro/ViewBolsasSangue.vue";
 import ViewDoadores from "../views/hemocentro/ViewDoadores.vue";
+import ViewGerenciarBolsasSangue from "../views/hemocentro/ViewGerenciarBolsasSangue.vue";
 
 export const routesHemocentro : RouteRecordRaw[] = [
   {
@@ -19,6 +20,16 @@ export const routesHemocentro : RouteRecordRaw[] = [
     path: '/hemocentro/bolsas-sangue',
     name: RouteNames.BOLSAS_SANGUE_HEMOCENTRO,
     component: ViewBolsasSangue
+  },
+  {
+    path: '/hemocentro/nova-bolsa-sangue',
+    name: RouteNames.CRIAR_BOLSA_SANGUE_HEMOCENTRO,
+    component: ViewGerenciarBolsasSangue
+  },
+  {
+    path: '/hemocentro/detalhes-bolsa-sangue',
+    name: RouteNames.EDITAR_BOLSA_SANGUE_HEMOCENTRO,
+    component: ViewGerenciarBolsasSangue
   },
   
 ]
